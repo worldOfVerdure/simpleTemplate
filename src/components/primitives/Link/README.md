@@ -10,7 +10,7 @@ The component supports these styling methods:
    - Built-in visual variants: `text`, `buttonPrimary`, `buttonSecondary`, `buttonGhost`.
 
 2. **`size`**
-   - Built-in sizes: `sm`, `md`, `lg`.
+   - Built-in sizes: `sm`, `md`, `lg`, `compact-lg`.
 
 3. **`className`**
    - Extra class(es) applied to the root anchor.

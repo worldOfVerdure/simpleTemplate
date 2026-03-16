@@ -4,7 +4,7 @@ import { cn } from '@/lib/cn';
 import styles from './Link.module.css';
 
 type LinkVariant = 'text' | 'buttonPrimary' | 'buttonSecondary' | 'buttonGhost';
-type LinkSize = 'sm' | 'md' | 'lg';
+type LinkSize = 'sm' | 'md' | 'lg' | 'compact-lg';
 
 type LinkSlots = {
   root?: string;
