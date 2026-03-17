@@ -1,6 +1,6 @@
 .link {
   --link-bg: transparent;
-  --link-color: var(--color-primary);
+  --link-color: var(--color-text);
   --link-border: transparent;
   --link-radius: var(--radius-md);
   --link-px: 0;
@@ -14,7 +14,7 @@
   justify-content: center;
   gap: var(--space-2);
   border-radius: var(--link-radius);
-  border: 1px solid var(--link-border);
+  border: 2px solid var(--link-border);
   background: var(--link-bg);
   color: var(--link-color);
   padding: var(--link-py) var(--link-px);

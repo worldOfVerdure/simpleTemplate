@@ -1,7 +1,7 @@
 .stack {
   --stack-direction: column;
   --stack-gap: var(--space-3);
-  --stack-align: stretch;
+  --stack-align: center;
   --stack-justify: flex-start;
   --stack-wrap: nowrap;
 
