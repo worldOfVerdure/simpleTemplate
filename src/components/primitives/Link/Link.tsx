@@ -4,7 +4,7 @@ import { cn } from '@/lib/cn';
 import styles from './Link.module.css';
 
 type LinkVariant = 'text' | 'buttonPrimary' | 'buttonSecondary' | 'buttonGhost';
-type LinkSize = 'sm' | 'md' | 'lg' | 'compact-lg';
+type LinkSize = 'none' | 'sm' | 'md' | 'lg' | 'compact-lg';
 
 type LinkSlots = {
   root?: string;
@@ -40,7 +40,7 @@ export type LinkProps = NextLinkProps &
 
 export function Link({
   variant = 'text',
-  size = 'md',
+  size = 'none',
   classes,
   className,
   vars,
@@ -49,6 +49,8 @@ export function Link({
   unstyled = false,
   ...rest
 }: LinkProps) {
+  const sizeClass = size === 'none' ? undefined : styles[size];
+
   const mergedStyle = {
     ...(style ?? {}),
     ...(vars ?? {})
@@ -64,7 +66,7 @@ export function Link({
 
   return (
     <NextLink
-      className={cn(styles.link, styles[size], styles[variant], classes?.root, className)}
+      className={cn(styles.link, sizeClass, styles[variant], classes?.root, className)}
       style={mergedStyle}
       {...rest}
     >

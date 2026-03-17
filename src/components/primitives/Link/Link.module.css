@@ -60,7 +60,7 @@
   background: currentColor;
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 160ms ease;
+  transition: transform 360ms ease;
 }
 
 .text:hover .label::after,

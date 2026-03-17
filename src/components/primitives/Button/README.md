@@ -10,7 +10,8 @@ The component supports these styling methods:
    - Built-in visual variants: `primary`, `secondary`, `ghost`.
 
 2. **`size`**
-   - Built-in sizes: `sm`, `md`, `lg`.
+   - Built-in sizes: `none`, `sm`, `md`, `lg`.
+   - Default: `none` (applies no size class).
 
 3. **`className`**
    - Extra class(es) applied to the root `<button>`.

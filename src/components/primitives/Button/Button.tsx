@@ -3,7 +3,7 @@ import { cn } from '@/lib/cn';
 import styles from './Button.module.css';
 
 type ButtonVariant = 'primary' | 'secondary' | 'ghost';
-type ButtonSize = 'sm' | 'md' | 'lg';
+type ButtonSize = 'none' | 'sm' | 'md' | 'lg';
 
 type ButtonSlots = {
   root?: string;
@@ -34,7 +34,7 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 
 export function Button({
   variant = 'primary',
-  size = 'md',
+  size = 'none',
   className,
   classes,
   vars,
@@ -43,6 +43,8 @@ export function Button({
   unstyled = false,
   ...rest
 }: ButtonProps) {
+  const sizeClass = size === 'none' ? undefined : styles[size];
+
   const mergedStyle = {
     ...(style ?? {}),
     ...(vars ?? {})
@@ -58,7 +60,7 @@ export function Button({
 
   return (
     <button
-      className={cn(styles.button, styles[variant], styles[size], classes?.root, className)}
+      className={cn(styles.button, styles[variant], sizeClass, classes?.root, className)}
       style={mergedStyle}
       {...rest}
     >
