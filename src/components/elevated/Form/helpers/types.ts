@@ -28,6 +28,8 @@ constraint‑validation state.
 
 */
 export type ValidationMessageRule =
+  | 'containsScriptTag'
+  | 'containsHtml'
   | 'valueMissing'
   | 'typeMismatch'
   | 'tooShort'

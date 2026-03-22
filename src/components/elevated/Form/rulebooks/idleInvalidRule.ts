@@ -4,16 +4,27 @@ import {
   RulebookGetValidationMessageArgs
 } from '@/components/elevated/Form/helpers/types';
 
+const scriptTagPattern = /<\s*script\b/i;
+const htmlTagPattern = /<\s*\/?\s*[a-z][^>]*>/i;
+
 const getMessageFromValidity = (
   fieldName: string,
   control: HTMLInputElement | HTMLTextAreaElement,
   validationMessages?: FormValidationMessages
 ) => {
+  const fieldMessages = validationMessages?.[fieldName];
+
+  if (scriptTagPattern.test(control.value)) {
+    return fieldMessages?.containsScriptTag ?? 'Script tags are not allowed';
+  }
+
+  if (htmlTagPattern.test(control.value)) {
+    return fieldMessages?.containsHtml ?? 'HTML tags are not allowed';
+  }
+
   if (control.validity.valid) {
     return null;
   }
-
-  const fieldMessages = validationMessages?.[fieldName];
 
   if (control.validity.valueMissing && fieldMessages?.valueMissing) {
     return fieldMessages.valueMissing;

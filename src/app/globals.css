@@ -89,3 +89,8 @@ main {
   width: min(100% - (2 * var(--space-4)), var(--container-max));
   margin-inline: auto;
 }
+
+ol, ul {
+  margin: 0;
+  padding: 0;
+}

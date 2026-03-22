@@ -22,15 +22,21 @@ const namePattern = "^[A-Za-z ,.'\\-]+$";
 const validationMessages = {
   name: {
     valueMissing: 'Please enter your name',
-    patternMismatch: "Use letters and optional spaces, apostrophes, or hyphens only"
+    patternMismatch: "Use letters and optional spaces, apostrophes, or hyphens only",
+    containsHtml: 'HTML tags are not allowed',
+    containsScriptTag: 'Script tags are not allowed'
   },
   email: {
     valueMissing: 'Please enter your email',
-    typeMismatch: 'Please enter a valid email address'
+    typeMismatch: 'Please enter a valid email address',
+    containsHtml: 'HTML tags are not allowed',
+    containsScriptTag: 'Script tags are not allowed'
   },
   message: {
     valueMissing: 'Please enter a message',
-    tooShort: 'Please write at least 10 characters'
+    tooShort: 'Please write at least 10 characters',
+    containsHtml: 'HTML tags are not allowed',
+    containsScriptTag: 'Script tags are not allowed'
   }
 };
 
