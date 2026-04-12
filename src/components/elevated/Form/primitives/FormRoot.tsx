@@ -7,9 +7,9 @@ import { useId, useMemo, useState } from 'react';
 import { cn } from '@/lib/cn';
 import {
   FormStateContext,
-  FormStateContextValue,
+  type FormStateContextValue,
   FormThemeContext,
-  FormThemeContextValue
+  type FormThemeContextValue
 } from '../context/formContext';
 import type { FormErrors, FormRootProps, FormTouchedFields } from '../helpers/types';
 

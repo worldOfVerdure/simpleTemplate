@@ -109,7 +109,7 @@ export const TestForm = () => {
         </Fieldset>
 
         <FormActions>
-          <Button className={styles.submit} type="submit" size="md">
+          <Button className={styles.submit} size="md">
             Send message
           </Button>
         </FormActions>

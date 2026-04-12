@@ -11,6 +11,8 @@ export {
 
 export { EmailControl, TextControl, TelControl, TextareaControl } from './controls';
 
+export { invalidFocusValid, idleInvalidRule } from './rulebooks';
+
 export type {
   FormBehaviorRulebook,
   FormRootProps,
