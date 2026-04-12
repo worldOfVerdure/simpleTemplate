@@ -16,9 +16,9 @@ That wrapper is defined in [src/components/elevated/Form/primitives/FormRoot.tsx
 - changed value: returns new object with `[fieldName]: message`
 
 4. When updates happen
-In [src/components/elevated/Form/controls/uncontrolled/useControlValidationHandlers.ts](src/components/elevated/Form/controls/uncontrolled/useControlValidationHandlers.ts#L29), `onBlur` sets error from `rulebook.getValidationMessage(...)`.  
-In [src/components/elevated/Form/controls/uncontrolled/useControlValidationHandlers.ts](src/components/elevated/Form/controls/uncontrolled/useControlValidationHandlers.ts#L42), `onInvalid` does the same.  
-In [src/components/elevated/Form/controls/uncontrolled/useControlValidationHandlers.ts](src/components/elevated/Form/controls/uncontrolled/useControlValidationHandlers.ts#L25), clear-path sets `null`.
+In [src/components/elevated/Form/controls/uncontrolled/useUncontrolValidationHandlers.ts](src/components/elevated/Form/controls/uncontrolled/useUncontrolValidationHandlers.ts#L29), `onBlur` sets error from `rulebook.getValidationMessage(...)`.  
+In [src/components/elevated/Form/controls/uncontrolled/useUncontrolValidationHandlers.ts](src/components/elevated/Form/controls/uncontrolled/useUncontrolValidationHandlers.ts#L42), `onInvalid` does the same.  
+In [src/components/elevated/Form/controls/uncontrolled/useUncontrolValidationHandlers.ts](src/components/elevated/Form/controls/uncontrolled/useUncontrolValidationHandlers.ts#L25), clear-path sets `null`.
 
 5. React update behavior
 When `setErrors` returns a new object, React schedules re-render of `FormRoot`.  

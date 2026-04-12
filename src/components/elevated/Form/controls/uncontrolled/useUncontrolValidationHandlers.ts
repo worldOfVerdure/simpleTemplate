@@ -28,7 +28,7 @@ const hasAutocompleteEnabled = (control: HTMLInputElement | HTMLTextAreaElement)
   return autocomplete !== 'off';
 };
 
-export const useControlValidationHandlers = (name: string) => {
+export const useUncontrolValidationHandlers = (name: string) => {
   const {
     focusedField,
     touchedFields,
@@ -50,11 +50,8 @@ export const useControlValidationHandlers = (name: string) => {
 
     const shouldClear = rulebook.shouldClearOnEmptyBlur?.(event.currentTarget.value) ?? isEmpty(event.currentTarget.value);
 
-    if (shouldClear && !touchedFields[name]) {
-      setTouchedWrapper(name, false);
-      setErrorWrapper(name, null);
-      return;
-    }
+    if (shouldClear && !touchedFields[name])
+      return;//Skip validation and the rest of handleBlur
 
     setTouchedWrapper(name, true);
     setErrorWrapper(

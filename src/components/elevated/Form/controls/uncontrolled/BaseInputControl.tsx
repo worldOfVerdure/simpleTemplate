@@ -6,7 +6,7 @@ import { composeHandlers } from '../../helpers/composeHandlers';
 import { getControlId, getMessageId } from '../../helpers/ids';
 import { useValidationFlowStatus } from '../../helpers/state';
 import { SharedControlProps } from '../../helpers/types';
-import { useControlValidationHandlers } from './useControlValidationHandlers';
+import { useUncontrolValidationHandlers } from './useUncontrolValidationHandlers';
 
 //~See below for explanation
 export type InputControlProps =
@@ -30,7 +30,7 @@ export function BaseInputControl({
   const { classes } = useFormTheme();
   const { formId, errors } = useFormState();
   const fieldState = useValidationFlowStatus(name);
-  const handlers = useControlValidationHandlers(name);
+  const handlers = useUncontrolValidationHandlers(name);
   const messageId = getMessageId(formId, name);
 
   return (

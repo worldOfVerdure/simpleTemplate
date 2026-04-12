@@ -6,7 +6,7 @@ import { composeHandlers } from '../../helpers/composeHandlers';
 import { getControlId, getMessageId } from '../../helpers/ids';
 import { useValidationFlowStatus } from '../../helpers/state';
 import { SharedControlProps } from '../../helpers/types';
-import { useControlValidationHandlers } from './useControlValidationHandlers';
+import { useUncontrolValidationHandlers } from './useUncontrolValidationHandlers';
 
 /*
 Omit onFocus, onBlur, and onInvalid from the native textarea props since we're handling those
@@ -33,7 +33,7 @@ export function TextareaControl({
   const { classes } = useFormTheme();
   const { formId, errors } = useFormState();
   const fieldState = useValidationFlowStatus(name);
-  const handlers = useControlValidationHandlers(name);
+  const handlers = useUncontrolValidationHandlers(name);
   const messageId = getMessageId(formId, name);
 
   return (
